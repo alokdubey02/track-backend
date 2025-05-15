@@ -35,7 +35,12 @@ app.get("/", requireAuth, (req, res) => {
   res.send(`Your email: ${req.user.email} ${req.user}`);
 });
 // , "192.168.183.104",
-app.listen(3000, "192.168.1.4", () => {
-  // app.listen(3000, "0.0.0.0", () => {
-  console.log("Backend running on port 3000");
+// app.listen(3000, "192.168.1.4", () => {
+//   // app.listen(3000, "0.0.0.0", () => {
+//   console.log("Backend running on port 3000");
+// });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
